@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Email Search</title>
+</head>
+<body onload="searchEmail()">
+  <script>
+    function searchEmail() {
+      // Get email address from query string
+      const urlParams = new URLSearchParams(window.location.search);
+      const email = urlParams.get("email");
+
+      // Create link to search for email in Gmail
+      const link = "https://mail.google.com/search?q=" + email;
+
+      // Add link to the DOM
+      const a = document.createElement("a");
+      a.href = link;
+      a.target = "_blank";
+      a.innerHTML = "Search for '" + email + "' in Gmail";
+      document.body.appendChild(a);
+    }
+  </script>
+</body>
+</html>
